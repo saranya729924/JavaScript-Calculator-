@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>js</title>
+    <style type="text/css">
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('https://img.freepik.com/free-photo/back-school-decoration-with-pencils-calculator-space_23-2147662344.jpg?w=826&t=st=1708499283~exp=1708499883~hmac=4524dc37d9ebf9222ea19b3f099e942b1e5b8794eb1e35743c984acfb1d1638e'); 
+            background-size: cover;
+            background-repeat: no-repeat;
+            color: #fff; 
+        }
+
+        h1 {
+            text-align: center;
+            color: #fff; 
+        }
+
+        .calculator {
+            width: 300px;
+            margin: 50px auto;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: rgba(0, 0, 0, 0.5); 
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+        }
+
+        input[type="number"], select {
+            margin: 10px;
+            padding: 5px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            background-color: rgba(255, 255, 255, 0.5); 
+            color: #000; 
+        }
+
+        button {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            background-color: #19db69;
+            color: #000; 
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #00a86b; 
+        }
+
+        #result {
+            margin-top: 10px;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: rgba(255, 255, 255, 0.8); 
+            color: #000; 
+            font-size: 20px;
+        }
+    </style>
+ </head>
+<body>
+    <h1>Calculator</h1>
+    <div class="calculator">
+        <input type="number" id="v1">
+        <select name="calculator" id="calculation">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+        </select>
+        <input type="number" id="v2">
+        <button type="button" onclick="Operation()">=</button>
+        <p id="result"></p>
+    </div>
+
+    <script language="javascript" type="text/javascript">
+        function Operation() {
+            var v1 = parseInt(document.getElementById('v1').value);
+            var v2 = parseInt(document.getElementById('v2').value);
+            var Operator = document.getElementById('calculation').value;
+
+            if (Operator === '+') {
+                add();
+            }
+            if (Operator === '-') {
+                sub();
+            }
+            if (Operator === '*') {
+                multiply();
+            }
+            if (Operator === '/') {
+                divi();
+            }
+
+            function add() {
+                document.getElementById('result').innerText = v1 + v2;
+            }
+
+            function sub() {
+                document.getElementById('result').innerText = v1 - v2;
+            }
+
+            function multiply() {
+                document.getElementById('result').innerText = v1 * v2;
+            }
+
+            function divi() {
+                document.getElementById('result').innerText = v1 / v2;
+            }
+        }
+    </script>
+</body>
+</html>
